@@ -1,16 +1,13 @@
 import mongoose from 'mongoose';
 
 const movieSchema = mongoose.Schema({
-    title: String,
-    year: String,
-    genres: [String],
-    LikeCount: {
-        type: Number,
-        default: 0
-    }
-
+    title: String
+},
+{
+     collection: 'movies'
 })
 
-const PostMessage = mongoose.model('PostMessage', movieSchema)
- 
+const PostMessage = mongoose.model('movies', movieSchema)
+
 export default PostMessage;
+
